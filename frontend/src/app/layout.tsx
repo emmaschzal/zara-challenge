@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Logo />
           <CartInactive />
         </header>
-        <main>{children}</main>
+        <main className={styles.spageWrapper}>{children}</main>
       </body>
     </html>
   );

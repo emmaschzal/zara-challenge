@@ -1,8 +1,7 @@
 'use client';
-import styles from './components/productGrid.module.css'
-import { useEffect, useState } from 'react';
-import ProductCard from './components/ProductCard';
 
+import { useEffect, useState } from 'react';
+import ProductGrid from './components/ProductGrid';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -16,11 +15,5 @@ export default function Home() {
     fetchProducts();
   }, []);
 
-  return (
-    <div className={styles.grid}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
-  );
+  return <ProductGrid products={products} />;
 }
