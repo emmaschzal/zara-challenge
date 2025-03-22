@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
 
 const envPath = process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev';
 dotenv.config({ path: envPath });
@@ -21,7 +20,7 @@ router.get('/', async (req, res) => {
     const uniqueProducts = data.filter(product => {
       if (seen.has(product.id)) return false;
       seen.add(product.id);
-      return true;
+      return true;  
     });
 
     res.json(uniqueProducts);

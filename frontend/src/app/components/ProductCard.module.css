@@ -1,0 +1,44 @@
+
+.productInformation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    align-items: end;
+}
+
+.name{
+    text-transform: uppercase;   
+    color: var(--foreground);
+    font-size: 12px;
+    margin: 0
+}
+.brand{
+    text-transform: uppercase;   
+    color: var(--secondary);
+    font-size: 10px;
+    margin: 0
+}
+.basePrice{
+    text-transform: uppercase;   
+    color: var(--foreground);
+    font-size: 12px;
+    margin: 0;
+
+}
+.imageWrapper{
+    position: relative;
+    width: 100%; 
+    justify-content: center;
+    aspect-ratio: 1 / 1; 
+}
+
+.image{
+    object-fit: contain; 
+}
+.productCard {
+    border-bottom: 0.5px solid var(--foreground);
+    border-right: 0.5px solid var(--foreground);
+    padding:16px;
+}
+
+
+

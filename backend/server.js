@@ -14,11 +14,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json()); 
 
-app.use('/shop', shop);
+app.use('/', shop);
 
-app.get('/', (req, res) => {
-    res.send('home');
-});
 
 app.listen(PORT, () => {
     console.log(`running http://localhost:${PORT}`);
