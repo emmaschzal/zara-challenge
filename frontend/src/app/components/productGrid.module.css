@@ -1,19 +1,22 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.5px;
-  padding: 0.5px;
-  max-width: 1720px;
-  margin: 0 auto;
-  background-color: var(--foreground);
+  max-width: 1820px;
+  margin-bottom: 24px;
+  margin: 0 auto; 
   list-style: none;
+  width: 100%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .grid li {
-  background-color: var(--background);
+  background-color: white;
   aspect-ratio: 1 / 1;
   display: flex;
-  padding: 16px;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 
 /* Tablet */

@@ -1,16 +1,10 @@
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
+import type { Product } from "../types/Product";
 
 type Props = {
-  product: {
-    name: string;
-    brand: string;
-    basePrice: number;
-    imageUrl: string;
-    id: string;
-  };
+  product: Product;
 };
-
 export default function ProductCard({ product }: Props) {
   return (
     <div className={styles.card}>
@@ -19,6 +13,7 @@ export default function ProductCard({ product }: Props) {
           src={product.imageUrl}
           alt={product.name}
           fill
+          sizes=""
           className={styles.image}
         />
       </div>

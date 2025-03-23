@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.use('/', shop);
-
+app.use('/shop', shop);
 
 app.listen(PORT, () => {
     console.log(`running http://localhost:${PORT}`);

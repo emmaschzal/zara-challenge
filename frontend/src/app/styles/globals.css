@@ -2,6 +2,8 @@
   --background: #ffffff;
   --foreground: #000000;
   --secondary: #79736d;
+  --header-height: 64px;
+  --searchbar-height: 96px;
 }
 
 /* @media (prefers-color-scheme: dark) {

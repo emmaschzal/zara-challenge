@@ -16,10 +16,12 @@ type Props = {
 
 export default function ProductGrid({ products }: Props) {
   return (
-    <div className={styles.grid}>
+    <ul className={styles.grid}>
       {products.map((product) => (
+        <li key={product.id}>
         <ProductCard key={product.id} product={product} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
