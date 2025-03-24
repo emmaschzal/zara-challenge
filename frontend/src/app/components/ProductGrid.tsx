@@ -1,4 +1,4 @@
-// import components/ProductGrid.tsx
+
 import ProductCard from "./ProductCard";
 import styles from "./productGrid.module.css";
 

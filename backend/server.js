@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json()); 
 
-app.use('/', shop);
+
 app.use('/shop', shop);
 
 app.listen(PORT, () => {

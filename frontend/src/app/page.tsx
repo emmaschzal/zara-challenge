@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import styles from './page.module.css'
 import type { Product } from './types/Product';
 
+
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
 
