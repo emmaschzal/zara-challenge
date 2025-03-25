@@ -16,6 +16,7 @@ type Props = {
 
 export default function ProductGrid({ products }: Props) {
   return (
+    <div className={styles.gridWrapper}>
     <ul className={styles.grid}>
       {products.map((product) => (
         <li key={product.id}>
@@ -23,5 +24,6 @@ export default function ProductGrid({ products }: Props) {
         </li>
       ))}
     </ul>
+    </div>
   );
 }
