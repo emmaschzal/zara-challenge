@@ -49,15 +49,16 @@ export default function ProductPage() {
     (s) => s.capacity === selectedStorage
   )?.price;
   return (
-    <div className={styles.pageWrapper}>
+    <div className={styles.page}>
       <div className={styles.productInfoImgWrapper}>
+        <div className={styles.imageWrapper}>
       <Image
         src={currentImage}
         alt={product.name}
-        width={500}
-        height={500}
+        fill
         className={styles.image}
       />
+      </div>
         <div className={styles.info}>
           <div className={styles.namePrice}>
             <h1 className={styles.brandName}>{product.brand} {product.name}</h1>
@@ -77,6 +78,7 @@ export default function ProductPage() {
               onSelectColor={setSelectedColor}
             />
           </div>
+          <button className={styles.addToCart}>AÑADIR</button>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+ position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -22,6 +22,6 @@ body {
 }
 .pageWrapper {
   margin-top: calc(var(--header-height) + var(--searchbar-height));
-  padding: 24px 100px;
+  
   
 }

@@ -1,13 +1,16 @@
-.pageWrapper{
+.page{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px; 
     display: flex;
     flex-direction: column;
-    gap: 104px;
-    align-items: center;
-
+    gap: 104px; 
 }
 .productInfoImgWrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .brandName {
@@ -66,3 +69,33 @@ letter-spacing: 0%;
 text-transform: uppercase;
 
 }
+
+.imageWrapper {
+    position: relative;
+    width: 610px;
+
+    overflow: hidden;
+}
+.image {
+    object-fit: contain; 
+}
+.addToCart {
+    font-family: var(--font-helvetica), Helvetica, Arial, sans-serif;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--foreground);
+    color: var(--background);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 56px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* .addToCart:hover {
+    background-color: var(--secondary);
+  } */
