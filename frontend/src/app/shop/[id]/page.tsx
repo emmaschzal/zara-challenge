@@ -7,15 +7,15 @@ import Specs from '@/app/components/Specs';
 import ProductGrid from "@/app/components/ProductGrid";
 import ColorOptions from "@/app/components/ColorOptions";
 import StorageOptions from "@/app/components/StorageOptions";
+import type { CartItem } from '@/app/types/ProductFullInfo'; 
 import styles from "./page.module.css"
 
 export default function ProductPage() {
+  // product elemnts and states
   const { id } = useParams();
   const [product, setProduct] = useState<ProductFullInfo | null>(null);
   const [selectedStorage, setSelectedStorage] = useState<string>('');
   const [selectedColor, setSelectedColor] = useState<string>('');
-
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,18 +36,51 @@ export default function ProductPage() {
     fetchProduct();
   }, [id]);
 
+  // handle cart.
+  const handleAddToCart = () => {
+    if (!product) return;
+  
+    const cartItem = {
+      id: product.id,
+      color: selectedColor || colorOptions[0]?.name,
+      storage: selectedStorage || storageOptions[0]?.capacity,
+      quantity: 1,
+      priceAtAddTime: storageOptions.find(s => s.capacity === selectedStorage)?.price || product.basePrice
+    };
+  
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]') as CartItem[];  
 
 
+const existingIndex = cart.findIndex((item: CartItem) =>
+      item.id === cartItem.id &&
+      item.color === cartItem.color &&
+      item.storage === cartItem.storage
+    );
+  
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(cartItem);
+    }
+  
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+  
+
+  // loading page  
   if (loading || !product) return <p></p>;
 
   const { storageOptions = [], colorOptions = [], similarProducts = [] } = product;
-
   const currentImage =
   colorOptions.find((color) => color.name === selectedColor)?.imageUrl ||
   colorOptions[0]?.imageUrl;
   const selectedStoragePrice = storageOptions.find(
     (s) => s.capacity === selectedStorage
   )?.price;
+
+
+
+
   return (
     <div className={styles.page}>
       <div className={styles.productInfoImgWrapper}>
@@ -78,7 +111,7 @@ export default function ProductPage() {
               onSelectColor={setSelectedColor}
             />
           </div>
-          <button className={styles.addToCart}>AÑADIR</button>
+          <button className={styles.addToCart} onClick={handleAddToCart}>AÑADIR</button>
         </div>
       </div>
 

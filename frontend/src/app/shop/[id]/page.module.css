@@ -73,11 +73,11 @@ text-transform: uppercase;
 .imageWrapper {
     position: relative;
     width: 610px;
-
+  
     overflow: hidden;
 }
 .image {
-    object-fit: contain; 
+    object-fit: contain;    
 }
 .addToCart {
     font-family: var(--font-helvetica), Helvetica, Arial, sans-serif;

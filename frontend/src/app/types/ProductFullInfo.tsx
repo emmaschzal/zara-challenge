@@ -11,6 +11,13 @@ export type StorageOption = {
   price: number;
 };
 
+export type CartItem = {
+  id: string;
+  color: string;
+  storage: string;
+  quantity: number;
+  priceAtAddTime: number;
+};
 export type ProductFullInfo = Product & {
   description: string;
   rating: number;
