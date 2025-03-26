@@ -2,7 +2,7 @@
 
 import { useState, useEffect, ChangeEvent } from "react";
 import useDebounce from "../hooks/useDebounce";
-import styles from "./searchBar.module.css";
+import styles from "./styles/searchBar.module.css";
 import type { Product } from "../types/Product"; 
 
 type Props = {

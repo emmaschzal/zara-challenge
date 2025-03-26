@@ -17,7 +17,9 @@ export default function Home() {
     const fetchAll = async () => {
       const res = await fetch('http://localhost:5000/shop');
       const data = await res.json();
+      console.log(data);
       setProducts(data);
+
     };
     fetchAll();
   }, []);

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./ProductCard.module.css";
+import styles from "./styles/productCard.module.css";
 import type { Product } from "../types/Product";
 import Link from "next/link";
 
@@ -8,7 +8,7 @@ type Props = {
 };
 export default function ProductCard({ product }: Props) {
   return (
-  <Link href={`/products/${product.id}`}>
+    <Link href={`/shop/${product.id}`}>
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <Image

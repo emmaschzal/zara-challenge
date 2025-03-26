@@ -1,6 +1,5 @@
-
 import ProductCard from "./ProductCard";
-import styles from "./productGrid.module.css";
+import styles from "./styles/productGrid.module.css";
 
 type Product = {
   id: string;
@@ -12,18 +11,19 @@ type Product = {
 
 type Props = {
   products: Product[];
+  horizontal?: boolean;
 };
 
-export default function ProductGrid({ products }: Props) {
+export default function ProductGrid({ products, horizontal = false }: Props) {
   return (
-    <div className={styles.gridWrapper}>
-    <ul className={styles.grid}>
-      {products.map((product) => (
-        <li key={product.id}>
-        <ProductCard key={product.id} product={product} />
-        </li>
-      ))}
-    </ul>
+    <div className={horizontal ? styles.horizontalWrapper : styles.gridWrapper}>
+      <ul className={styles.grid}>
+        {products.map((product) => (
+          <li key={product.id}>
+            <ProductCard product={product} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -4,6 +4,7 @@
   --secondary: #79736d;
   --header-height: 64px;
   --searchbar-height: 96px;
+  --grid-border: 1px solid var(--foreground);
 }
 
 /* @media (prefers-color-scheme: dark) {

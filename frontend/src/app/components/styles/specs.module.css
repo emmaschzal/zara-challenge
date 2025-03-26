@@ -1,0 +1,32 @@
+.specsWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 48px auto;
+    gap: 40px;
+  }
+  .title {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+
+  }
+  .wrapper {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 0.5px solid #000;
+  }
+  
+  .wrapper:last-child {
+    border-bottom: 0.5px solid #000;
+  }
+  
+
+  .label {
+    width: 300px;
+    text-transform: uppercase;
+  }

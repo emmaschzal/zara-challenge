@@ -2,9 +2,16 @@
 const express = require('express');
 const router = express.Router();
 const dotenv = require('dotenv');
+const path = require('path');
+const fs = require('fs/promises')
+
 
 const envPath = process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev';
+
+
 dotenv.config({ path: envPath });
+const useMock = process.env.USE_MOCK === 'true';
+
 
 const BASE_API_URL = 'https://prueba-tecnica-api-tienda-moviles.onrender.com/products/';
 const BASE_API_KEY = process.env.API_KEY;
@@ -17,16 +24,28 @@ router.get('/', async (req, res) => {
   console.log('query:', search);
 
   try {
-    const response = await fetch(BASE_API_URL, {
-      method: 'GET',
-      headers,
-    });
+    let data;
 
-    if (!response.ok) {
-      throw new Error(`failed to fetch: ${response.statusText}`);
+    if (useMock) {
+      const filePath = path.join(__dirname, '../api/products.json');
+      console.log('Using mock data from:', filePath);
+
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      data = JSON.parse(fileContent);
+    } else {
+      const response = await fetch(BASE_API_URL, {
+        method: 'GET',
+        headers,
+      });
+
+      if (!response.ok) {
+        throw new Error(`failed to fetch: ${response.statusText}`);
+      }
+
+      data = await response.json();
     }
 
-    const data = await response.json();
+    // remove duplicates
     const seen = new Set();
     const uniqueProducts = data.filter(product => {
       if (seen.has(product.id)) return false;
@@ -34,6 +53,7 @@ router.get('/', async (req, res) => {
       return true;
     });
 
+    // search filter
     const filtered = search
       ? uniqueProducts.filter(product => {
           const name = product.name?.toLowerCase() || '';
@@ -44,7 +64,7 @@ router.get('/', async (req, res) => {
 
     res.json(filtered);
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error:', error.message);
     res.status(500).json({ error: 'failed to fetch products' });
   }
 });
@@ -55,22 +75,36 @@ router.get('/:id', async (req, res) => {
   console.log('Fetching product:', id);
 
   try {
-    const response = await fetch(`${BASE_API_URL}${id}`, {
-      method: 'GET',
-      headers,
-    });
+    let product;
 
-    if (!response.ok) {
-      throw new Error(`failed to fetch: ${response.statusText}`);
+    if (useMock) {
+      const filePath = path.join(__dirname, '../api/single-product.json');
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      const data = JSON.parse(fileContent);
+
+      product = data.find(p => p.id === id);
+
+      if (!product) {
+        return res.status(404).json({ error: 'Product not found' });
+      }
+    } else {
+      const response = await fetch(`${BASE_API_URL}${id}`, {
+        method: 'GET',
+        headers,
+      });
+
+      if (!response.ok) {
+        throw new Error(`failed to fetch: ${response.statusText}`);
+      }
+
+      product = await response.json();
     }
 
-    const data = await response.json();
-    res.json(data);
+    res.json(product);
   } catch (error) {
     console.error('Error fetching product:', error.message);
     res.status(500).json({ error: 'failed to fetch product' });
   }
 });
-
 
 module.exports = router;

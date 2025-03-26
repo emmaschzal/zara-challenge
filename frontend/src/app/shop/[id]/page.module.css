@@ -1,0 +1,68 @@
+.pageWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 104px;
+    align-items: center;
+
+}
+.productInfoImgWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.brandName {
+
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    
+}
+
+.info {
+    display:flex;
+    flex-direction: column;
+    gap: 64px;
+
+}
+
+
+.namePrice {
+    display: flex;
+    gap: 11px;
+    flex-direction: column;
+}
+.price {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+
+}
+.selectors {
+    display:flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.image {
+    object-fit: contain;
+}
+
+.similarProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.similarItemsLabel {
+font-weight: 300;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+
+}

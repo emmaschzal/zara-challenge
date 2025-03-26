@@ -1,0 +1,178 @@
+[
+    {
+      "id": "GPX-8A",
+      "brand": "Google",
+      "name": "Pixel 8a",
+      "basePrice": 459,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/GPX-8A-obsidiana.webp"
+    },
+    {
+      "id": "XMI-RN13P5G",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13 Pro 5G",
+      "basePrice": 399,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-RN13P5G-midnight-black.webp"
+    },
+    {
+      "id": "XIA-RN13",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13",
+      "basePrice": 169,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XIA-RN13-mint-green.webp"
+    },
+    {
+      "id": "XMI-R13C",
+      "brand": "Xiaomi",
+      "name": "Redmi 13C",
+      "basePrice": 149,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-R13C-navy-blue.webp"
+    },
+    {
+      "id": "XMI-14",
+      "brand": "Xiaomi",
+      "name": "14",
+      "basePrice": 899,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-14-negro.webp"
+    },
+    {
+      "id": "SMG-A05S",
+      "brand": "Samsung",
+      "name": "Galaxy A05s",
+      "basePrice": 119,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/SMG-A05S-black.webp"
+    },
+    {
+      "id": "GPX-8A",
+      "brand": "Google",
+      "name": "Pixel 8a",
+      "basePrice": 459,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/GPX-8A-obsidiana.webp"
+    },
+    {
+        "id": "SMG-S24U",
+        "brand": "Samsung",
+        "name": "SMG",
+        "basePrice": 459,
+        "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/GPX-8A-obsidiana.webp"
+      },
+    
+    {
+      "id": "XMI-RN13P5G",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13 Pro 5G",
+      "basePrice": 399,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-RN13P5G-midnight-black.webp"
+    },
+    {
+      "id": "XIA-RN13",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13",
+      "basePrice": 169,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XIA-RN13-mint-green.webp"
+    },
+    {
+      "id": "XMI-R13C",
+      "brand": "Xiaomi",
+      "name": "Redmi 13C",
+      "basePrice": 149,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-R13C-navy-blue.webp"
+    },
+    {
+      "id": "XMI-14",
+      "brand": "Xiaomi",
+      "name": "14",
+      "basePrice": 899,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-14-negro.webp"
+    },
+    {
+      "id": "SMG-A05S",
+      "brand": "Samsung",
+      "name": "Galaxy A05s",
+      "basePrice": 119,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/SMG-A05S-black.webp"
+    },
+    {
+      "id": "GPX-8A",
+      "brand": "Google",
+      "name": "Pixel 8a",
+      "basePrice": 459,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/GPX-8A-obsidiana.webp"
+    },
+    {
+      "id": "XMI-RN13P5G",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13 Pro 5G",
+      "basePrice": 399,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-RN13P5G-midnight-black.webp"
+    },
+    {
+      "id": "XIA-RN13",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13",
+      "basePrice": 169,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XIA-RN13-mint-green.webp"
+    },
+    {
+      "id": "XMI-R13C",
+      "brand": "Xiaomi",
+      "name": "Redmi 13C",
+      "basePrice": 149,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-R13C-navy-blue.webp"
+    },
+    {
+      "id": "XMI-14",
+      "brand": "Xiaomi",
+      "name": "14",
+      "basePrice": 899,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-14-negro.webp"
+    },
+    {
+      "id": "SMG-A05S",
+      "brand": "Samsung",
+      "name": "Galaxy A05s",
+      "basePrice": 119,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/SMG-A05S-black.webp"
+    },
+    {
+      "id": "GPX-8A",
+      "brand": "Google",
+      "name": "Pixel 8a",
+      "basePrice": 459,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/GPX-8A-obsidiana.webp"
+    },
+    {
+      "id": "XMI-RN13P5G",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13 Pro 5G",
+      "basePrice": 399,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-RN13P5G-midnight-black.webp"
+    },
+    {
+      "id": "XIA-RN13",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13",
+      "basePrice": 169,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XIA-RN13-mint-green.webp"
+    },
+    {
+      "id": "XMI-R13C",
+      "brand": "Xiaomi",
+      "name": "Redmi 13C",
+      "basePrice": 149,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-R13C-navy-blue.webp"
+    },
+    {
+      "id": "XMI-14",
+      "brand": "Xiaomi",
+      "name": "14",
+      "basePrice": 899,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/XMI-14-negro.webp"
+    },
+    {
+      "id": "SMG-A05S",
+      "brand": "Samsung",
+      "name": "Galaxy A05s",
+      "basePrice": 119,
+      "imageUrl": "http://prueba-tecnica-api-tienda-moviles.onrender.com/images/SMG-A05S-black.webp"
+    }
+  ]

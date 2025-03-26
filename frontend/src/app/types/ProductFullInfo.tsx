@@ -24,7 +24,7 @@ export type ProductFullInfo = Product & {
     os: string;
     screenRefreshRate: string;
   };
-  colorOptions: ColorOption[];
-  storageOptions: StorageOption[];
-  similarProducts: Product[];
+  colorOptions ?: ColorOption[];       
+  storageOptions ?: StorageOption[];    
+  similarProducts ?: Product[];
 };
