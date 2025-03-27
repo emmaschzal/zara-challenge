@@ -1,84 +1,86 @@
 .cartItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-    width: 548px;
-    height: 324px;
-    margin: 0 auto 40px auto;
-    text-align: left;
-  }
-  
-  .imageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  
-    width: 262px;
-    height: 324px;
-    flex-shrink: 0;
-  }
-  
-  .image {
-    width: 262px;
-    height: 324px;
-    object-fit: contain;
-  }
-  
-  .infoBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px 0;
-    width: 246px;
-    height: 324px;
-  }
-  
-  .productInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .nameGroup {
-    display: flex;  
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .brand,
-  .name {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-   
-  }
-  
-  .price {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  width: 548px;
+  height: 324px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
 
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: 262px;
+  height: 324px;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 262px;
+  height: 324px;
+  object-fit: contain;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0;
+  width: 246px;
+  height: 324px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand,
+.name {
+  font-family: "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.price {
+  font-family: "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+}
+
+.remove {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #df0000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+@media (max-width: 934px) {
+  .cartItem {
+    gap: 24;
   }
-    
-  .remove {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
-    color: #DF0000;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    padding: 0;
-  
-  }
-  
+}

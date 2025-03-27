@@ -8,7 +8,7 @@ type Props = {
 export default function Specs({ specs }: Props) {
   if (!specs) return null;
 
-  const entries = [
+  const productSpecs = [
     { label: "Screen", value: specs.screen },
     { label: "Resolution", value: specs.resolution },
     { label: "Processor", value: specs.processor },
@@ -23,12 +23,12 @@ export default function Specs({ specs }: Props) {
     <div className={styles.specsWrapper}>
       <p className={styles.title}>SPECIFICATIONS</p>
       <div>
-      {entries.map(({ label, value }) => (
-        <div key={label} className={styles.wrapper}>
-          <p className={styles.label}>{label}</p>
-          <p className={styles.data}>{value}</p>
-        </div>
-      ))}
+        {productSpecs.map(({ label, value }) => (
+          <div key={label} className={styles.wrapper}>
+            <p className={styles.label}>{label}</p>
+            <p className={styles.data}>{value}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

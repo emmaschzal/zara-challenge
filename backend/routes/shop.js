@@ -10,7 +10,7 @@ const envPath = process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev'
 
 
 dotenv.config({ path: envPath });
-const useMock = process.env.USE_MOCK === 'true';
+const useMock = process.env.USE_MOCK;
 
 
 const BASE_API_URL = 'https://prueba-tecnica-api-tienda-moviles.onrender.com/products/';
@@ -21,14 +21,14 @@ const headers = { 'x-api-key': BASE_API_KEY, 'accept': 'application/json', };
 // root or /shop -> displays all the products
 router.get('/', async (req, res) => {
   const search = (req.query.q || '').toLowerCase();
-  console.log('query:', search);
+
 
   try {
     let data;
 
     if (useMock) {
       const filePath = path.join(__dirname, '../api/products.json');
-      console.log('Using mock data from:', filePath);
+      // console.log('Using mock data from:', filePath);
 
       const fileContent = await fs.readFile(filePath, 'utf-8');
       data = JSON.parse(fileContent);
@@ -72,7 +72,7 @@ router.get('/', async (req, res) => {
 // / /{id} or shop/id -> displays single product with its information
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  console.log('Fetching product:', id);
+  // console.log('fetching product:', id);
 
   try {
     let product;

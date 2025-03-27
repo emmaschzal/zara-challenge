@@ -6,7 +6,7 @@
   --searchbar-height: 96px;
   --grid-border: 1px solid var(--foreground);
   /* para pasar a sass (futuro)/ proyecto con mas timepo */
-  --breakpoint-desktop: 1024px; 
+  --breakpoint-desktop: 1024px;
   --breakpoint-tablet: 834px;
   --breakpoint-mobile: 600px;
 }

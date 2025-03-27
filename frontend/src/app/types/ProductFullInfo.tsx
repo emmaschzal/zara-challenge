@@ -1,5 +1,5 @@
 import type { Product } from "./Product";
-
+// full type of product, inherits from product type
 export type ColorOption = {
   name: string;
   hexCode: string;

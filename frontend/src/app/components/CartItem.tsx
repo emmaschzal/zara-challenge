@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import styles from './styles/cartItem.module.css';
+import Image from "next/image";
+import styles from "./styles/cartItem.module.css";
 
 interface Props {
   item: {
@@ -41,7 +41,9 @@ export default function CartItem({ item, product, onRemove }: Props) {
           </div>
           <p className={styles.price}>{item.priceAtAddTime} EUR</p>
         </div>
-        <button onClick={onRemove} className={styles.remove}>Eliminar</button>
+        <button onClick={onRemove} className={styles.remove}>
+          Eliminar
+        </button>
       </div>
     </div>
   );

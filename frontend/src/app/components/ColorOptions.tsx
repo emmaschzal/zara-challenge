@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import styles from "./styles/colorOptions.module.css";
 import clsx from "clsx";
@@ -14,7 +14,11 @@ type Props = {
   onSelectColor: (name: string) => void;
 };
 
-export default function ColorOptions({ colors, selectedColor, onSelectColor }: Props) {
+export default function ColorOptions({
+  colors,
+  selectedColor,
+  onSelectColor,
+}: Props) {
   const selected = colors.find((color) => color.name === selectedColor);
 
   return (
@@ -24,7 +28,10 @@ export default function ColorOptions({ colors, selectedColor, onSelectColor }: P
       <div className={styles.options}>
         {colors.map((color) => (
           <div key={color.name} className={styles.optionWrapper}>
-            <div
+            <div 
+              data-testid="color-swatch"
+              role="button"
+              aria-label={color.name}
               className={clsx(styles.colorSwatch, {
                 [styles.active]: selectedColor === color.name,
               })}
@@ -39,9 +46,7 @@ export default function ColorOptions({ colors, selectedColor, onSelectColor }: P
         ))}
       </div>
 
-      {selected && (
-        <span className={styles.colorName}>{selected.name}</span>
-      )}
+      {selected && <span className={styles.colorName}>{selected.name}</span>}
     </div>
   );
 }

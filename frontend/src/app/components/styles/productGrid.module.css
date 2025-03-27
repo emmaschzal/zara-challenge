@@ -9,8 +9,6 @@
   list-style: none;
   padding: 0;
   box-sizing: border-box;
-
-
 }
 
 .grid li {
@@ -20,10 +18,9 @@
   flex-direction: column;
   cursor: pointer;
   outline: 0.5px solid var(--foreground);
-  
-} 
+}
 
-/* horizontal mode */
+/* horizontal mode for single product page */
 
 .horizontalWrapper {
   overflow-x: auto;
@@ -32,7 +29,6 @@
   width: 100%;
   max-width: 1200px;
 }
-
 
 .horizontalWrapper .grid {
   display: flex;
@@ -44,7 +40,6 @@
   list-style: none;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .horizontalWrapper .grid li {
@@ -58,10 +53,7 @@
   aspect-ratio: 1;
   cursor: pointer;
   border: 0.5px solid var(--secondary);
-  
-  
 }
-
 
 .horizontalWrapper::-webkit-scrollbar {
   height: 2px;
@@ -71,7 +63,6 @@
   background-color: var(--secondary);
   border-radius: 2px;
 }
-
 
 /* tablet */
 @media (max-width: 934px) {
@@ -92,8 +83,5 @@
 
   .horizontalWrapper .grid li {
     max-width: 444px;
-  
   }
-  
 }
-

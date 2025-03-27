@@ -1,203 +1,137 @@
-.page{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 1720px;
-        padding: 24px 100px ;
-        margin-top: var(--header-height);
-       
-       
+.page {
+  margin-top: var(--header-height);
+  padding: 12px 100px;
 }
-
-
-
+.totalWrapperMobile {
+  display: none;
+}
 .cartWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start
+  display: flex;
 }
-
-
-.cartTitle {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 100%;
-    text-transform: uppercase;
-    text-align: left;
+.mobileWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  width: 100%;
 }
-
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  
-    display: flex;
-    justify-content: center; 
-    background: white;
-    z-index: 10;
-    padding: 24px 100px;
+  width: 100%;
+  background: var(--background);
+  display: flex;
+  margin-top: auto;
+}
+.footerContent {
+  width: 100%;
+
+  max-width: 1720px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.leftFooter {
+  display: flex;
+}
+
+.continueShopping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 32px;
+  text-align: center;
+  height: 56px;
+  width: 260px;
+  border: 0.5px solid #1b1a18;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 8%;
+}
+.rightFooter {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.totalWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.totalLabel,
+.totalAmount {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.payWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 32px;
+  height: 56px;
+  text-transform: uppercase;
+  width: 260px;
+  background: var(--foreground);
+  color: var(--background);
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 12px;
+  }
+  .rightFooter {
+    flex-direction: column;
   }
   .footerContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mobileWrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
     width: 100%;
-    max-width: 1720px;
-    flex-wrap: wrap;
-    gap: 24px;
+    gap: 12px;
+  }
+  .rightFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
   }
 
-  .continueShopping {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 32px;
-    width: 260px;
-    height: 56px;
-    border: 0.5px solid #1B1A18;
-    text-decoration: none;
+  .leftFooter {
+    width: 100%;
+    margin-bottom: 12px;
   }
-  
-  .totalActions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-    height: 56px;
+
+  .continueShopping,
+  .payWrapper {
+    width: 100%;
   }
-  
-  
-  .totalBlock {
+
+  .totalWrapperMobile {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 24px;
-    min-width: 240px; 
-    justify-content: flex-start;
-  }
-  
-  
-  .totalLabel,
-  .totalAmount {
-    font-size: 14px;
+    justify-content: space-between;
+    width: 100%;
     text-transform: uppercase;
-    font-weight: 400;
+    gap: 8px;
   }
-  
-  .payButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 32px;
-    width: 260px;
-    height: 56px;
-    background: #1B1A18;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .buttonLabel {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #fff;
-  }
-  
-  .continueShopping .buttonLabel {
-    color: #000;
-  }
-
- 
-  @media (max-width: 900px) {
-    .footer {
-      padding: 16px 24px;
-    }
-  
-    .footerContent {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  
-    .totalActions {
-      width: 100%;
-      justify-content: space-between;
-      gap: 16px;
-    }
-  
-    .continueShopping,
-    .payButton {
-      width: 48%;
-      min-width: unset;
-    }
-  }
-  
-
-
-  .totalActionGroup {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  @media (max-width: 768px) {
-    .footerContent {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
- 
-.totalActionGroup {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  .buttonRow {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
+  .totalWrapper {
+    display: none;
   }
 }
-  
-  /*tablet*/
-  @media (max-width: 768px) {
-    .footerContent {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  
-    .totalActionGroup {
-      order: -1;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-    }
-  
-    .totalBlock {
-      margin-bottom: 8px;
-      width: 100%;
-      justify-content: space-between;
-    }
-  
-    .buttonRow {
-      display: flex;
-      flex-direction: row;
-      gap: 16px;
-      width: 100%;
-    }
-  
-    .continueShopping,
-    .payButton {
-      flex: 1;
-      width: 100%;
-    }
-  } 
+
+@media (max-width: 934px) {
+  .page {
+    padding: 40px;
+  }
+  .rightFooter {
+    gap: 12px;
+  }
+}

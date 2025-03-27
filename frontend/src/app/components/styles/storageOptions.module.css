@@ -1,62 +1,61 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap:24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 .storageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    gap: 16px;
-  }
-  
-  .label {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    text-transform: uppercase;
-    color: var(--foreground);
-  }
-  
-  .options {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .option {
-    all: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    width: 95px;
-    height: 65px;
-  
-    background-color: var(--background);
-    color: var(--foreground);
-    font-size: 14px;
-    font-weight: 300;
-    font-family: 'Helvetica Neue', sans-serif;
-    text-transform: capitalize;
-    cursor: pointer;
-  
-    border: 1px solid var(--secondary);
-    border-left: none;
-    transition: all 0.2s ease;
-  }
-  
-  .option:first-child {
-    border-left: 1px solid var(--secondary);
-  }
-  
-  .option.active {
-    border: 1px solid var(--foreground);
-    border-left: none;
-  }
-  
-  .option.active:first-child {
-    border-left: 1px solid var(--foreground);
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+}
+
+.label {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+}
+
+.option {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 95px;
+  height: 65px;
+
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Helvetica Neue", sans-serif;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  border: 1px solid var(--secondary);
+  border-left: none;
+  transition: all 0.2s ease;
+}
+
+.option:first-child {
+  border-left: 1px solid var(--secondary);
+}
+
+.option.active {
+  border: 1px solid var(--foreground);
+  border-left: none;
+}
+
+.option.active:first-child {
+  border-left: 1px solid var(--foreground);
+}

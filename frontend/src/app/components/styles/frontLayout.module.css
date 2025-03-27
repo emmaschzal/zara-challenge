@@ -1,5 +1,5 @@
 .header {
- position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -23,7 +23,7 @@ body {
 
 .cartWrapper {
   display: flex;
-  align-items: baseline; 
+  align-items: baseline;
   justify-content: center;
   gap: 6px;
   padding: 4px 0;
@@ -42,7 +42,7 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 1;
-  transform: translateY(-3px); 
+  transform: translateY(-3px);
   color: black;
 }
 

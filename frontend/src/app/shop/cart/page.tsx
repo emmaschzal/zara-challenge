@@ -1,10 +1,9 @@
-'use client';
-import { useEffect, useState } from 'react';
-import styles from './page.module.css';
-import Link from 'next/link';
-import CartItem from '@/app/components/CartItem'; 
-import { useCart } from '@/app/context/CartContext';
-
+"use client";
+import { useEffect, useState } from "react";
+import styles from "./page.module.css";
+import Link from "next/link";
+import CartItem from "@/app/components/CartItem";
+import { useCart } from "@/app/context/CartContext";
 
 interface CartItem {
   id: string;
@@ -34,7 +33,7 @@ export default function CartPage() {
   const { updateCartCount } = useCart();
 
   useEffect(() => {
-    const items: CartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
+    const items: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
     setCartItems(items);
 
     const fetchProducts = async () => {
@@ -54,10 +53,10 @@ export default function CartPage() {
             id: data.id,
             name: data.name,
             brand: data.brand,
-            imageUrl
+            imageUrl,
           });
         } catch (error) {
-          console.error('Error fetching product:', error);
+          console.error("Error fetching product:", error);
         }
       }
 
@@ -69,11 +68,12 @@ export default function CartPage() {
     }
   }, []);
 
+
   const handleRemove = (indexToRemove: number) => {
     const updated = cartItems.filter((_, i) => i !== indexToRemove);
     setCartItems(updated);
-    localStorage.setItem('cart', JSON.stringify(updated));
-    updateCartCount()
+    localStorage.setItem("cart", JSON.stringify(updated));
+    updateCartCount();
   };
 
   const total = cartItems.reduce(
@@ -82,56 +82,58 @@ export default function CartPage() {
   );
 
   return (
+    <div className={styles.page}>
+      <h2 className={styles.cartTitle}>CART ({cartItems.length})</h2>
 
-      <div className={styles.page}>
-        <h2 className={styles.cartTitle}>CART ({cartItems.length})</h2>
-    
-        <div className={styles.cartWrapper}>
-          {cartItems.map((item, i) => {
-            const product = products.find(p => p.id === item.id);
-            if (!product) return null;
-    
-            return (
-              <div key={i + "item"} className={styles.cartItem}>
+      <div className={styles.cartWrapper}>
+        {cartItems.map((item, i) => {
+          const product = products.find((p) => p.id === item.id);
+          if (!product) return null;
+
+          return (
+            <div key={i + "item"} className={styles.cartItem}>
               <CartItem
                 key={i}
                 item={item}
                 product={product}
                 onRemove={() => handleRemove(i)}
               />
+            </div>
+          );
+        })}
+      </div>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          {cartItems.length > 0 && (
+            <>
+              <div className={styles.totalWrapperMobile}>
+                <span className={styles.totalLabelMobile}>Total</span>
+                <span className={styles.totalAmountMobile}>{total} EUR</span>
+              </div>
+
+              <div className={styles.mobileWrapper}>
+                <div className={styles.leftFooter}>
+                  <Link href="/" className={styles.continueShopping}>
+                    <span className={styles.buttonLabel}>
+                      Continue shopping
+                    </span>
+                  </Link>
                 </div>
-            );
-          
-          })}
+
+                <div className={styles.rightFooter}>
+                  <div className={styles.totalWrapper}>
+                    <span className={styles.totalLabel}>Total</span>
+                    <span className={styles.totalAmount}>{total} EUR</span>
+                  </div>
+                  <button className={styles.payWrapper}>
+                    <span className={styles.buttonLabel}>Pay</span>
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
-    
-        <footer className={styles.footer}>
-        <footer className={styles.footer}>
-  <div className={styles.footerContent}>
-    {cartItems.length > 0 && (
-      <div className={styles.totalActionGroup}>
-        <div className={styles.totalBlock}>
-          <span className={styles.totalLabel}>Total</span>
-          <span className={styles.totalAmount}>{total} EUR</span>
-        </div>
-
-        <div className={styles.buttonRow}>
-          <Link href="/" className={styles.continueShopping}>
-            <span className={styles.buttonLabel}>Continue shopping</span>
-          </Link>
-
-          <button className={styles.payButton}>
-            <span className={styles.buttonLabel}>Pay</span>
-          </button>
-        </div>
-      </div>
-    )}
-  </div>
-</footer>
-
-
-        </footer>
-      </div>
-    );
-
+      </footer>
+    </div>
+  );
 }

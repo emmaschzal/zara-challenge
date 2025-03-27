@@ -15,12 +15,13 @@ type Props = {
 };
 
 export default function ProductGrid({ products, horizontal = false }: Props) {
+  const LCP = "SMG-S24U";
   return (
     <div className={horizontal ? styles.horizontalWrapper : styles.gridWrapper}>
       <ul className={styles.grid}>
         {products.map((product) => (
           <li key={product.id}>
-            <ProductCard product={product} />
+            <ProductCard product={product} priority={product.id === LCP} />
           </li>
         ))}
       </ul>

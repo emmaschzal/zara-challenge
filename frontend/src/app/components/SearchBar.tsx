@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
 import useDebounce from "../hooks/useDebounce";
 import styles from "./styles/searchBar.module.css";
-import type { Product } from "../types/Product"; 
+import type { Product } from "../types/Product";
 
 type Props = {
   onResults: (data: Product[]) => void;
 };
 export default function SearchBar({ onResults }: Props) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query, 300);
   const [count, setCount] = useState(0);
 
@@ -22,7 +22,7 @@ export default function SearchBar({ onResults }: Props) {
       const res = await fetch(`http://localhost:5000/shop?q=${debouncedQuery}`);
       const data = await res.json();
       setCount(data.length);
-      onResults(data); 
+      onResults(data);
     };
 
     fetchProducts();
