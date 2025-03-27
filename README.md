@@ -21,7 +21,7 @@ zara-challenge/
 │   ├── routes/        # Rutas del backend (`shop.js`)
 │   ├── api/           # Archivos mock JSON para entorno de desarrollo
 │   ├── server.js      # Punto de entrada del servidor
-│   ├── .env.*         # Variables de entorno para backend
+│   ├── .env.*         # Variables de entorno para backend 
 │   └── package.json   # ejecución del front
 ││
 ├── frontend/          # Aplicación Next.js (React)
@@ -64,13 +64,19 @@ Frontend en desarrollo
 ```bash
 npm run dev
 ```
-Frontend produccion
+Frontend produccion.
+Primero:
+```bash
+npm run build
+
+```
+Seguidamente:
 ```bash
 npm run start
 
 ```
 ## Archivos de entorno
-Importante añadir la API KEY en el archivo .env.prodution para que haga la llamada a la API externa.
+Importante añadir la API KEY en el archivo .env.prodution para que haga la llamada a la API externa. Quitar el .sample de los archivos de entorno.
 
 Algunas cosas mencionadas en el pdf que no he conseguido realizar por falta de tiempo
 - SASS
@@ -78,4 +84,4 @@ Algunas cosas mencionadas en el pdf que no he conseguido realizar por falta de t
 - Mas testing
 
 Dicho esto, acabo este proyecto con muchas ganas de seguir aprendiendo.
-Aunque pueda o no conseguir el puesto, he aprendido varias cosas nuevas que no conocía antes.
+Aunque pueda o no conseguir el puesto, he aprendido varias cosas nuevas que no conocía antes. :)
