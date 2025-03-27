@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zara Challenge para Napptilus
 
-## Getting Started
+Este proyecto es una aplicación full-stack desarrollada como parte de un reto técnico. Está construida con **Next.js** en el frontend y **Node.js (Express)** en el backend. El backend actúa como un intermediario entre el frontend y una API externa.
 
-First, run the development server:
+## Tech Stack
 
+- **Frontend**: React (Next.js), CSS Modules, clsx
+- **Backend**: Node.js, Express
+- **Testing**: Jest + Supertest
+- **Environment**: `.env.development`, `.env.production`, mock support
+
+---
+
+##  Arquitectura y Estructura del Proyecto
+
+```txt
+zara-challenge/
+
+│
+├── backend/           # Servidor Express que consume API externa
+│   ├── routes/        # Rutas del backend (`shop.js`)
+│   ├── api/           # Archivos mock JSON para entorno de desarrollo
+│   ├── server.js      # Punto de entrada del servidor
+│   ├── .env.*         # Variables de entorno para backend
+│   └── package.json   # ejecución del front
+││
+├── frontend/          # Aplicación Next.js (React)
+│   ├── components/    # Componentes reutilizables 
+│   ├─  public         # Archivos publicos como fuentes (Helvetica, de uso no comercial)
+│   ├── hooks          # Hooks pesronalizados (useDebounce desde 0)
+│   ├── shop           # Ruta de la tienda con la página principal y la página individual de productos
+│   ├── shop           # Ruta del carrito
+│   ├── styles         # Estilos generales
+│   ├── testing        # Testing de front (no terminado)
+│   ├── types          # clases para los componentes
+│   └── package.json   # ejecución del front
+
+├── README.md              
+
+```
+## Instalación
+
+Clonar el repositorio en local y dirigirse a carpeta backend.
+Instalar dependencias
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+```
+Ir a carpeta frontend e instalar dependencias
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ejecutar proyecto
+El proyecto dispone version desarrollo y versión produccion, la versión de desarrollo usa la API real. Empezar backend en desarrollo:
+```bash
+npm run dev
+```
+Backend en producción
+```bash
+npm run start
+```
+Frontend en desarrollo
+```bash
+npm run dev
+```
+Frontend produccion
+```bash
+npm run start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+## Archivos de entorno
+Importante añadir la API KEY en el archivo .env.prodution para que haga fetch a la api externa.
 
-## Learn More
+Algunas cosas mencionadas en el pdf que no he conseguido realizar por falta de tiempo
+- SASS
+- Algunas transiciones, y crossfades 
+- Mas testing
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dicho esto, acabo este proyecto con muchas ganas de seguir aprendiendo.
+Aunque pueda o no conseguir el puesto, he aprendido varias cosas nuevas que no conocía antes.

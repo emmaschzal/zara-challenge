@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-const envPath = process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev';
+const envPath = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 dotenv.config({ path: envPath });
 
 const shop = require('./routes/shop');

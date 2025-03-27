@@ -1,10 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "test": "npx jest",
+    "lint": "eslint .",
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^9.22.0",
     "eslint-config-next": "^15.2.3",
     "supertest": "^7.1.0"

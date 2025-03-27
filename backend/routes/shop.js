@@ -5,12 +5,11 @@ const dotenv = require('dotenv');
 const path = require('path');
 const fs = require('fs/promises')
 
-
-const envPath = process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev';
+const envPath = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 
 
 dotenv.config({ path: envPath });
-const useMock = process.env.USE_MOCK;
+const useMock = process.env.USE_MOCK === 'true';
 
 
 const BASE_API_URL = 'https://prueba-tecnica-api-tienda-moviles.onrender.com/products/';
