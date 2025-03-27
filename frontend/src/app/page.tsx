@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <SearchBar onResults={handleResults} />
-      <ProductGrid products={products} />
+      <ProductGrid products={products.slice(0, 20)}/>
     </div>
   );
 }

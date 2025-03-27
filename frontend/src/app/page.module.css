@@ -1,4 +1,22 @@
 .page {
     padding: 24px 100px;
+    margin-top: calc(var(--header-height) + var(--searchbar-height));
   
 }
+
+
+
+
+/*tablet */
+@media (max-width: 934px) {
+    .page {
+      padding: 24px 40px;
+    }
+  }
+  
+  /* mobile */
+  @media (max-width: 600px) {
+    .page {
+      padding: 24px 16px;
+    }
+  }

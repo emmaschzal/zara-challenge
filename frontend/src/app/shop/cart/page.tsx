@@ -1,8 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import styles from './page.module.css';
 import Link from 'next/link';
+import CartItem from '@/app/components/CartItem'; 
+import { useCart } from '@/app/context/CartContext';
+
 
 interface CartItem {
   id: string;
@@ -10,6 +12,7 @@ interface CartItem {
   storage: string;
   quantity: number;
   priceAtAddTime: number;
+  imageUrl: string;
 }
 
 interface ColorOption {
@@ -28,6 +31,7 @@ interface ProductData {
 export default function CartPage() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [products, setProducts] = useState<ProductData[]>([]);
+  const { updateCartCount } = useCart();
 
   useEffect(() => {
     const items: CartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -69,6 +73,7 @@ export default function CartPage() {
     const updated = cartItems.filter((_, i) => i !== indexToRemove);
     setCartItems(updated);
     localStorage.setItem('cart', JSON.stringify(updated));
+    updateCartCount()
   };
 
   const total = cartItems.reduce(
@@ -77,48 +82,56 @@ export default function CartPage() {
   );
 
   return (
-    <div className={styles.page}>
-      <h2 className={styles.cartTitle}>CART ({cartItems.length})</h2>
 
-      <div className={styles.cartWrapper}>
-        {cartItems.map((item, i) => {
-          const product = products.find(p => p.id === item.id);
-          if (!product) return null;
+      <div className={styles.page}>
+        <h2 className={styles.cartTitle}>CART ({cartItems.length})</h2>
+    
+        <div className={styles.cartWrapper}>
+          {cartItems.map((item, i) => {
+            const product = products.find(p => p.id === item.id);
+            if (!product) return null;
+    
+            return (
+              <div key={i + "item"} className={styles.cartItem}>
+              <CartItem
+                key={i}
+                item={item}
+                product={product}
+                onRemove={() => handleRemove(i)}
+              />
+                </div>
+            );
+          
+          })}
+        </div>
+    
+        <footer className={styles.footer}>
+        <footer className={styles.footer}>
+  <div className={styles.footerContent}>
+    {cartItems.length > 0 && (
+      <div className={styles.totalActionGroup}>
+        <div className={styles.totalBlock}>
+          <span className={styles.totalLabel}>Total</span>
+          <span className={styles.totalAmount}>{total} EUR</span>
+        </div>
 
-          return (
-            <div key={i} className={styles.cartItem}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  width={200}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.info}>
-                <h3 className={styles.name}>{product.brand} {product.name}</h3>
-                <p className={styles.details}>
-                  {item.storage} | {item.color.toUpperCase()}
-                </p>
-                <p className={styles.price}>{item.priceAtAddTime} EUR</p>
-                <p className={styles.quantity}>Qty: {item.quantity}</p>
-                <button onClick={() => handleRemove(i)} className={styles.remove}>Eliminar</button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+        <div className={styles.buttonRow}>
+          <Link href="/" className={styles.continueShopping}>
+            <span className={styles.buttonLabel}>Continue shopping</span>
+          </Link>
 
-      <div className={styles.cartFooter}>
-        <Link href="/">
-          <button className={styles.continue}>CONTINUE SHOPPING</button>
-        </Link>
-        <div className={styles.totalPay}>
-          <p className={styles.total}>TOTAL: {total} EUR</p>
-          <button className={styles.pay}>PAY</button>
+          <button className={styles.payButton}>
+            <span className={styles.buttonLabel}>Pay</span>
+          </button>
         </div>
       </div>
-    </div>
-  );
+    )}
+  </div>
+</footer>
+
+
+        </footer>
+      </div>
+    );
+
 }

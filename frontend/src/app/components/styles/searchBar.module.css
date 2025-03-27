@@ -35,3 +35,20 @@
     text-transform: uppercase;
     color: var(--foreground);
   }
+
+
+
+
+/* tablet */
+@media (max-width: 934px) {
+  .searchBarWrapper {
+    padding: 12px 40px;
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .searchBarWrapper {
+    padding: 12px 16px;
+  }
+}
