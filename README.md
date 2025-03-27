@@ -75,6 +75,12 @@ Seguidamente:
 npm run start
 
 ```
+Otros comandos:
+Testing en backend:
+```bash
+npm run test
+
+```
 ## Archivos de entorno
 Importante añadir la API KEY en el archivo .env.prodution para que haga la llamada a la API externa. Quitar el .sample de los archivos de entorno.
 
